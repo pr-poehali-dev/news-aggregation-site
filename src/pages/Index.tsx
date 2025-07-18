@@ -35,7 +35,7 @@ const Index = () => {
     }
   };
 
-  const channels = [
+  const getChannels = () => [
     {
       name: 'Пушкин в Африке',
       url: 'https://t.me/AfroPouchkine',
@@ -49,18 +49,14 @@ const Index = () => {
       description: 'Аналитика и новости БРИКС'
     },
     {
-      name: 'From Russia with Love',
-      url: 'https://t.me/ChannelFRL',
-      lang: 'en',
-      description: 'English news and analysis'
-    },
-    {
-      name: 'Bons Baisers',
-      url: 'https://t.me/BonsBaisers',
-      lang: 'fr',
-      description: 'Nouvelles et analyses en français'
+      name: currentLang === 'en' ? 'From Russia with Love' : currentLang === 'fr' ? 'Из России с любовью' : 'Из России с любовью',
+      url: currentLang === 'en' ? 'https://t.me/ChannelFRL' : 'https://t.me/BonsBaisers',
+      lang: currentLang === 'en' ? 'en' : 'fr',
+      description: currentLang === 'en' ? 'English news and analysis' : 'Nouvelles et analyses en français'
     }
   ];
+
+  const channels = getChannels();
 
   const mockNews = [
     {
@@ -83,7 +79,7 @@ const Index = () => {
       id: 3,
       title: 'Développement durable en Afrique subsaharienne',
       excerpt: 'Les nouvelles initiatives de développement durable montrent des résultats prometteurs...',
-      channel: 'Bons Baisers',
+      channel: 'Из России с любовью',
       time: '4 heures',
       lang: 'fr'
     },
