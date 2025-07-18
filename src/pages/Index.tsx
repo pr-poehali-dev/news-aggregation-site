@@ -35,7 +35,7 @@ const Index = () => {
     }
   };
 
-  const getChannels = () => [
+  const channels = [
     {
       name: 'Пушкин в Африке',
       url: 'https://t.me/AfroPouchkine',
@@ -49,14 +49,18 @@ const Index = () => {
       description: 'Аналитика и новости БРИКС'
     },
     {
-      name: currentLang === 'en' ? 'From Russia with Love' : currentLang === 'fr' ? 'Из России с любовью' : 'Из России с любовью',
-      url: currentLang === 'en' ? 'https://t.me/ChannelFRL' : 'https://t.me/BonsBaisers',
-      lang: currentLang === 'en' ? 'en' : 'fr',
-      description: currentLang === 'en' ? 'English news and analysis' : 'Nouvelles et analyses en français'
+      name: 'From Russia with Love',
+      url: 'https://t.me/ChannelFRL',
+      lang: 'en',
+      description: 'English news and analysis'
+    },
+    {
+      name: 'Из России с любовью',
+      url: 'https://t.me/BonsBaisers',
+      lang: 'fr',
+      description: 'Nouvelles et analyses en français'
     }
   ];
-
-  const channels = getChannels();
 
   const mockNews = [
     {
